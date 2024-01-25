@@ -396,10 +396,10 @@
                         },
                         "ir_sig_new2",
                         "ir_comman_if",
-                        {
-                            xml: '<label text="Task"></label>',
-                        },
-                        "run_in_background",
+                   //     {
+                     //       xml: '<label text="Task"></label>',
+                       // },
+                        //"run_in_background",
                         
                     ]
                 }),
