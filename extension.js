@@ -6,13 +6,24 @@
     version: "1.0.0",
     icon: "/static/beetlecar.png",
     color: "#4A7CCC",
-    blocks: [  {
+    blocks: [   {
                             xml: '<label text="Beetlecar"></label>'
                             
                         },
                         {
                             xml: '<label text="Motor"></label>'
                             
+                        },
+                        {
+                            xml: `
+                                <block type="abs_of">
+                                    <value name="FROM">
+                                        <shadow type="math_number">
+                                            <field name="NUM">1</field>
+                                        </shadow>
+                                    </value>
+                                </block>
+                            `
                         },
                                                 //////////// MOTOR 2.0 ///////////////
                                                 {
@@ -25,19 +36,19 @@
                                                 },
                                                 {
                                                     xml: `
-                                                    <block type="new_motor3">
-                                                        <field name="motor">0</field>
+                                                    <block type="new_motor2">
                                                         <field name="move">0</field>
-                                                        <field name="speed">200</field>
+                                                        <field name="speed">180</field>
+                                                        <field name="time">0</field>
                                                     </block>
                                                 `
                                                 },
                                                 {
                                                     xml: `
-                                                    <block type="new_motor2">
+                                                    <block type="new_motor3">
+                                                        <field name="motor">0</field>
                                                         <field name="move">0</field>
-                                                        <field name="speed">180</field>
-                                                        <field name="time">0</field>
+                                                        <field name="speed">200</field>
                                                     </block>
                                                 `
                                                 },
@@ -202,6 +213,8 @@
                                 </block>
                             `
                         },
+                        
+                        
                         //servo End //////////////////////////////////
 
                         {
@@ -209,6 +222,17 @@
                         },
 
                          //LED Start //////////////////////////////////
+                       /* {
+                            xml: `
+                            <block type="led_onoff">
+                                <value name="pin_trig">
+                                    <shadow type="math_number">
+                                        <field name="NUM">Left ON</field>
+                                    </shadow>
+                                </value>
+                            </block>
+                        `
+                        },*/
                         {
                             xml: `
                             <block type="led_left">
@@ -231,6 +255,7 @@
                             </block>
                         `
                         },
+                        
                        
                         
 
@@ -366,5 +391,15 @@
                                 </block>
                             `
                         },*/
+                        {
+                            xml: '<label text="IR Signal"></label>',
+                        },
+                        "ir_sig_new2",
+                        "ir_comman_if",
+                        {
+                            xml: '<label text="Task"></label>',
+                        },
+                        "run_in_background",
+                        
                     ]
-                         });
+                }),
